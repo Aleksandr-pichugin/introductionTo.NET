@@ -1,5 +1,9 @@
 ﻿//#define CONSOLE_CLASS
-//#define STRING_OPERATIONS
+//#define FIGURE0
+//#define FIGURE1
+//#define FIGURE2
+//#define FIGURE3
+//#define FIGURE4
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,7 +40,7 @@ namespace introductionToDOTNET
             Console.SetBufferSize(91, 22);
             Console.WriteLine("Ширина буфера консоли: " + Console.BufferWidth + " знакопозиций");
             Console.WriteLine("Высота буфера консоли: " + Console.BufferHeight + " знакопозиций");  
-#endif 
+#endif
 #if STRING_OPERATIONS
 			Console.Write("Введите ваше имя: ");
             string first_name = Console.ReadLine();
@@ -51,6 +55,71 @@ namespace introductionToDOTNET
             Console.WriteLine(String.Format("{0} {1} {2}", first_name, last_name, age));//форматирование строк
             Console.WriteLine($"{first_name}{last_name}{age}");//интерполяция строк  
 #endif
-        }
-    }
+#if FIGURE0
+			for (int i = 0; i < 5; i++)
+                Console.WriteLine("*****"); 
+#endif
+#if FIGURE1
+            //int n = 1 ;
+            int row = 5;
+            for (int i = 0; i < row; i++)
+            {
+                for (int j = 0; j <= i; j++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine("");
+            }
+            Console.ReadLine(); 
+#endif
+#if FIGURE2
+            int row = 5;
+            for (int i = 0; i < row; i++)
+            {
+                for (int j = 0; j < row - i; j++)
+                    Console.Write("*");
+                {
+                    Console.WriteLine(" ");
+                }
+                for (int k = 0; k <= i; k++)
+                {
+                    Console.Write("");
+                }
+            }
+
+            Console.ReadLine(); 
+#endif
+#if FIGURE3
+            int row = 5;
+            for (int i = 0; i < row; i++)
+            {
+                for (int j = 0; j < row - i; j++)
+                    Console.Write("*");
+                {
+                    Console.WriteLine(" ");
+                }
+                for (int k = 0; k <= i; k++)
+                {
+                    Console.Write(" ");
+                } 
+            }
+#endif
+#if FIGURE4
+            int row = 6;
+            for (int i = 0; i < row; i++)
+            {
+                for (int j = 0; j < i; j++)
+                    Console.Write("*");
+                {
+                    Console.WriteLine("");
+                }
+                for (int k = 0; k < row - i; k++)
+                {
+                    Console.Write(" ");
+                }
+            } 
+#endif
+			
+		}
+	}
 }
